@@ -17,7 +17,7 @@ import { useDeployedContractInfo, useScaffoldReadContract, useScaffoldWriteContr
 export default function Dashboard() {
   const [invested, setInvested] = useState(false);
   const [newEmergencyWallet, setNewEmergencyWallet] = useState(false);
-  const [timeRemaining] = useState(3 * 365 * 24 * 60 * 60 * 1000);
+  const [timeRemaining] = useState(3 * 30 * 24 * 60 * 60 * 1000);
   const [isLoading, setIsLoading] = useState(true);
 
   const { address: connectedAddress, isConnected } = useAccount();
@@ -219,7 +219,7 @@ export default function Dashboard() {
                         <InfoIcon className="h-4 w-4 text-gray-500" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>{`If there's no activity for over 3 years, the emergency wallet can withdraw the funds.`}</p>
+                        <p>{`If there's no activity for over 3 months, the emergency wallet can withdraw the funds.`}</p>
                         <p>Time remaining: {isConnected ? formatTimeRemaining(timeRemaining) : "N/A"}</p>
                       </TooltipContent>
                     </Tooltip>
